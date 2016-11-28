@@ -1,4 +1,6 @@
-# WP Custom Post Type Class v1.3.3
+**N.B** I've released an updated version of the project to a new repository, [PostTypes](https://github.com/jjgrainger/PostTypes).
+
+# WP Custom Post Type Class v1.4
 
 A single class to help you build more advanced custom post types quickly.
 
@@ -216,13 +218,13 @@ $books->sortable(array(
 
 #### Dashicons
 
-With WordPress 3.8 comes [dashicons](http://melchoyce.github.io/dashicons/) an icon font you can use with your custom post types. To use simply pass the icon name through the `menu_icon()` method like so:
+With WordPress 3.8 comes [dashicons](https://developer.wordpress.org/resource/dashicons/) an icon font you can use with your custom post types. To use simply pass the icon name through the `menu_icon()` method like so:
 
 ```php
 $books->menu_icon("dashicons-book-alt");
 ```
 
-For a full list of icons and the class names to use visit [http://melchoyce.github.io/dashicons/](http://melchoyce.github.io/dashicons/)
+For a full list of icons and the class names to use visit [https://developer.wordpress.org/resource/dashicons/](https://developer.wordpress.org/resource/dashicons/)
 
 ### Translation
 
@@ -230,6 +232,15 @@ The class is setup for translation, but if you need to set your own textdomain t
 
 ```php
 $books->set_textdomain('your-textdomain');
+```
+
+### Flush Rewrite Rules
+
+You can programmatically recreate the sites rewrite rules with the `flush()` method.
+This is an expensive operation and should be used with caution, see [codex](https://codex.wordpress.org/Function_Reference/flush_rewrite_rules) for more.
+
+```php
+$books->flush();
 ```
 
 ## Notes
